@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     let thirdDiv;
                     const multipleCard = middleDiv.querySelector('.add-multiple-card');
                     const centerContainer = appendDiv.querySelector('#middle-div');
+                    console.log("Before creating thirdDiv:", thirdDiv);
 
                     multipleCard.addEventListener('click', function (e) {
                         e.preventDefault();
@@ -95,7 +96,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             thirdDiv.draggable=true;
                             
                             let boardCounter = 0;
-                            thirdDiv.innerHTML = `<label for="" class="lab-p"></label>
+                            thirdDiv.innerHTML = `
+                            <div class="top-span">
+                            <label for="" class="lab-p"></label>
+                            <a href="#" class="del">&#x22EF</a>
+                            </div>
                                 <p class="p-title">${titleName}</p>
                                 <a href="#" class="area tooltip" ><img src="hamburger.svg" alt="hamburger">
                                 <span class="tooltiptext"></span></a>
@@ -106,9 +111,29 @@ document.addEventListener('DOMContentLoaded', function () {
                             const areaImg = thirdDiv.querySelector('.area');
 
                             const draggables = thirdDiv.querySelectorAll('.draggable:not(.add-card)')
-                              const containers = appendDiv.querySelectorAll('.middle-div')
+                              const containers = appendDiv.querySelector('.middle-div')
 
 
+                              const threeDot = thirdDiv.querySelector('.del');
+                                threeDot.addEventListener('click', function (event) {
+                                    event.preventDefault();
+
+                                    const container = thirdDiv.closest('#middle-div');
+
+                                    console.log("Before removal - container:", container);
+                                    console.log("Before removal - thirdDiv:", thirdDiv);
+
+                                    if (container) {
+                                        container.removeChild(thirdDiv);
+                                    }
+
+                                    console.log("After removal - container:", container);
+                                    console.log("After removal - thirdDiv:", thirdDiv);
+
+                                    saveToLocalStorage();
+                                });
+
+                                
                               draggables.forEach(draggable => {
                                   draggable.addEventListener('dragstart', () => {
                                     draggable.classList.add('dragging')
@@ -118,24 +143,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                     draggable.classList.remove('dragging')
                                   })
                                 })
-                                containers.forEach(container => {
-                                  container.addEventListener('drop', e => {
-                                    e.preventDefault();
-                                    const draggable = document.querySelector('.dragging');
-                                    container.appendChild(draggable);
-                                  });
+                                // containers.forEach(container => {
+                                //   container.addEventListener('drop', e => {
+                                //     e.preventDefault();
+                                //     const draggable = document.querySelector('.dragging');
+                                //     container.appendChild(draggable);
+                                //   });
                                 
-                                  container.addEventListener('dragover', e => {
-                                    e.preventDefault();
-                                    const afterElement = getDragAfterElement(container, e.clientY);
-                                    const draggable = document.querySelector('.dragging');
-                                    if (afterElement == null) {
-                                      container.appendChild(draggable);
-                                    } else {
-                                      container.insertBefore(draggable, afterElement);
-                                    }
-                                  });
-                                });
+                                //   container.addEventListener('dragover', e => {
+                                //     e.preventDefault();
+                                //     const afterElement = getDragAfterElement(container, e.clientY);
+                                //     const draggable = document.querySelector('.dragging');
+                                //     if (afterElement == null) {
+                                //       container.appendChild(draggable);
+                                //     } else {
+                                //       container.insertBefore(draggable, afterElement);
+                                //     }
+                                //   });
+                                // });
                             const popWindow = document.getElementById("pop-it");
                             const close = document.getElementById("close-it");
                             const over = document.getElementById("overlay");
@@ -217,6 +242,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     taskElement.remove();
                                 });
                             });
+
+
+
                             const threeDotButton = appendDiv.querySelector('.area');
                             threeDotButton.addEventListener('click', function (event) {
                               event.preventDefault();
@@ -267,8 +295,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-
-
 
 
