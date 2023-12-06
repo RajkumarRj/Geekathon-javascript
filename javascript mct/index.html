@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/53cb2834f4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Trello Broad</h2>
+    <div id="board-container">
+
+        <!-- <div id="board" >
+            <div class="top">
+                <p>Vijay</p>   
+                <a href="#"><img src="3dot.svg" alt="dot"></a>
+             </div>
+             <div id="add-card-name"></div>
+             <div id="middle-div" class="container">
+                <div id="card-div" draggable="true" class="draggable">
+                    <label for="">Movie</label>
+                    <p>Varisu</p>
+                    <a href="#"  class="area"><img src="hamburger.svg" alt="hamburger"></a>
+                    <div id="date-task">
+                        <p><img src="clock.svg" alt="clock">13 Dec</p>
+                        <p><img src="tick.svg" alt="tick"> 0/1</p>
+                    </div>
+                </div>
+                <div id="card-div" draggable="true" class="draggable">
+                    <label for="">Movie</label>
+                    <p>Leo</p>
+                    <a href="#"  class="area"><img src="hamburger.svg" alt="hamburger"></a>
+                    <div id="date-task">
+                        <p><img src="clock.svg" alt="clock">13 Dec</p>
+                        <p><img src="tick.svg" alt="tick"> 0/1</p>
+                    </div>
+                </div>
+                
+                
+                <div class="add-card">
+                    <button class="button1" id="add-card-title">+ Add Card</button>
+                </div>
+             </div>
+        </div> -->
+
+        <!-- <div id="board" >
+            <div class="top">
+                <p>Vijay</p>   
+                <a href="#"><img src="3dot.svg" alt="dot"></a>
+             </div>
+             
+             <div id="middle-div" class="container">
+                <div id="card-div" draggable="true" class="draggable">
+                    <label for="">Movie</label>
+                    <p>Bigil</p>
+                    <a href="#"  class="area"><img src="hamburger.svg" alt="hamburger"></a>
+                    <div id="date-task">
+                        <p><img src="clock.svg" alt="clock">13 Dec</p>
+                        <p><img src="tick.svg" alt="tick"> 0/1</p>
+                    </div>
+                </div>
+                <div id="card-div" draggable="true" class="draggable">
+                    <label for="">Movie</label>
+                    <p>Master</p>
+                    <a href="#"  class="area"><img src="hamburger.svg" alt="hamburger"></a>
+                    <div id="date-task">
+                        <p><img src="clock.svg" alt="clock">13 Dec</p>
+                        <p><img src="tick.svg" alt="tick"> 0/1</p>
+                    </div>
+                </div>
+                
+
+                <div class="add-card">
+                    <button class="button1">+ Add Card</button>
+                </div>
+             </div>
+             
+        </div> -->
+
+
+
+        <div id="container">
+            <div id="value" ></div>
+            <button class="button2" id="addDivButton" >Add Board</button>
+        </div>
+
+    </div>
+
+
+    <!-- <div class="pop-up " id="pop-it">
+        <a href="#" id="close-it">&times;</a>
+        <div id="title">
+            <i class="fa-solid fa-t"></i>
+            <span class="font">Title</span>
+
+            <p style="margin-top: 15px; background-color: rgb(203, 185, 185); width: fit-content;">varisu</p>
+        </div>
+
+        <div id="description">
+            <i class="fa-solid fa-bars"></i>
+            <span class="font">Description</span>
+            <p style="margin-top: 15px; background-color: rgb(203, 185, 185); width: fit-content;">Amazing movie</p>
+
+        </div>
+
+        <div id="date">
+            <i class="fa-regular fa-calendar"></i>
+            <span class="font">Date</span>
+            <p ><input type="date" style="height: 30px; margin: 10px auto ; border-color: gray;"></p>
+        </div>
+
+        <div id="label">
+            <i class="fa-solid fa-tag"></i>
+            <span class="font">Label</span>
+            <input type="color">
+            
+            <button>Add Label</button>
+        </div>
+
+        <div id="tasks">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span class="font">Tasks</span>
+        </div>
+        <div id="add-task">
+            <div class="cardinfo-box-progress-bar">
+                <div class="cardinfo-box-progress" ></div>
+            </div>
+            <input type="checkbox">  anime <a href="#"><i class="fa-solid fa-trash aside"></i></a>
+            <button>Add a Task</button>
+        </div>
+    </div> -->
+    
+    <!-- Add this within your HTML body, after the existing structure -->
+    <div id="pop-it" class="pop-up">
+        <a href="#" id="close-it">&times;</a>
+        <div id="title-popup">
+            <i class="fa-solid fa-t"></i>
+            <span class="font">Title</span>
+            <input type="text" id="title-input" placeholder="Enter title">
+        </div>
+
+
+        <div id="description-popup">
+            <i class="fa-solid fa-bars"></i>
+            <span class="font">Description</span>
+            <textarea id="description-input" placeholder="Enter Description"></textarea>
+        </div>
+    
+        <div id="date-popup">
+            <i class="fa-regular fa-calendar"></i>
+            <span class="font">Date</span>
+            <input type="date" id="date-input" style="height: 30px; margin: 10px auto; border-color: gray;">
+        </div>
+    
+        <div id="label-popup">
+            <i class="fa-solid fa-tag"></i>
+            <span class="font">Label</span>
+            <input type="color" id="label-input">
+            <button>Add Label</button>
+        </div>
+    
+        <div id="tasks-popup">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span class="font">Tasks</span>
+        </div>
+    
+        <div id="add-task-popup">
+        <div class="cardinfo-box-progress-bar">
+            <div class="cardinfo-box-progress"></div>
+        </div>
+        <input type="checkbox" id="task-checkbox"> <label for="task-checkbox">Enter Task</label>
+        <button id="add-task-button">Add a Task</button>
+     </div>
+
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <!-- <div id="board-input">
+        <input type="text" placeholder="Enter Board name">
+        <button id="add-board">Add Board</button>
+        <a href="#">&times;</a>
+    </div>
+
+
+    <div id="card-input">
+        <input type="text" placeholder="Enter Card Title">
+        <button>Add </button>
+        <a href="#">&times;</a>
+    </div> -->
+    
+      
+    <script defer src="script.js" ></script>
+    
+</body>
+</html>
